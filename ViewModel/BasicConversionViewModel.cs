@@ -10,6 +10,7 @@ namespace SandpitWPF.ViewModel
     public class BasicConversionViewModel : BaseViewModel
     {
         private readonly BasicConversionService _basicConversionService;
+        public  CheckBoxViewModelcs CheckBoxViewModelcs { get; }
 
         private double _metersInput;
         private double _kilogramsInput;
@@ -18,6 +19,21 @@ namespace SandpitWPF.ViewModel
         public BasicConversionViewModel()
         {
             _basicConversionService = new BasicConversionService();
+            CheckBoxViewModelcs = new CheckBoxViewModelcs();
+            CheckBoxViewModelcs.PropertyChanged += CheckBoxViewModelcs_PropertyChanged;
+        }
+
+        private void CheckBoxViewModelcs_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
+        {
+            if (e.PropertyName == nameof(CheckBoxViewModelcs.DivideBy10) ||
+                e.PropertyName == nameof(CheckBoxViewModelcs.DivideBy100) ||
+                e.PropertyName == nameof(CheckBoxViewModelcs.DivideBy1000) ||
+                e.PropertyName == nameof(CheckBoxViewModelcs.DivideBy10000))
+            {
+                NotifyPropertyChanged(nameof(MetersOutput));
+                NotifyPropertyChanged(nameof(KilogramsOutput));
+                NotifyPropertyChanged(nameof(KilometersOutput));
+            }
         }
 
         public double MetersInput
@@ -28,8 +44,9 @@ namespace SandpitWPF.ViewModel
                 _metersInput = value;
                 NotifyPropertyChanged(nameof(MetersInput));
                 NotifyPropertyChanged(nameof(MetersOutput));
+
             }
-        }
+        }   
 
         public double KilogramsInput
         {
@@ -55,8 +72,83 @@ namespace SandpitWPF.ViewModel
 
         }
 
-        public double MetersOutput => _basicConversionService.MeterstoFeet(_metersInput);
-        public double KilogramsOutput => _basicConversionService.KilogramsToPounds(_kilogramsInput);
-        public double KilometersOutput => _basicConversionService.KilometersPerHourToMetersPerSecond(_kilometersInput);
+        public double MetersOutput 
+        {
+            get
+            {
+                if (CheckBoxViewModelcs.DivideBy10 == true)
+                {
+                    return _basicConversionService.MeterstoFeet(_metersInput) / 10;
+                }
+                else if (CheckBoxViewModelcs.DivideBy100 == true)
+                {
+                    return _basicConversionService.MeterstoFeet(_metersInput) / 100;
+                }
+                else if (CheckBoxViewModelcs.DivideBy1000 == true)
+                {
+                    return _basicConversionService.MeterstoFeet(_metersInput) / 1000;
+                }
+                else if (CheckBoxViewModelcs.DivideBy10000 == true)
+                {
+                    return _basicConversionService.MeterstoFeet(_metersInput) / 10000;
+                }
+
+                return _basicConversionService.MeterstoFeet(_metersInput);
+            }
+        } 
+        //public double KilogramsOutput => _basicConversionService.KilogramsToPounds(_kilogramsInput);
+        public double KilogramsOutput
+        {
+            get
+            {
+                if (CheckBoxViewModelcs.DivideBy10 == true)
+                {
+                    return _basicConversionService.KilogramsToPounds(_kilogramsInput) / 10;
+                }
+                else if (CheckBoxViewModelcs.DivideBy100 == true)
+                {
+                    return _basicConversionService.KilogramsToPounds(_kilogramsInput) / 100;
+                }
+                else if (CheckBoxViewModelcs.DivideBy1000 == true)
+                {
+                    return _basicConversionService.KilogramsToPounds(_kilogramsInput) / 1000;
+                }
+                else if (CheckBoxViewModelcs.DivideBy10000 == true)
+                {
+                    return _basicConversionService.KilogramsToPounds(_kilogramsInput) / 10000;
+                }
+                return _basicConversionService.KilogramsToPounds(_kilogramsInput);
+            }
+        }
+
+
+        public double KilometersOutput
+        {
+            get
+            {
+                if (CheckBoxViewModelcs.DivideBy10 == true)
+                {
+                    return _basicConversionService.KilometersPerHourToMetersPerSecond(KilometersInput) / 10;
+                }
+                else if (CheckBoxViewModelcs.DivideBy100 == true)
+                {
+                    return _basicConversionService.KilometersPerHourToMetersPerSecond(KilometersInput) / 100;
+                }
+                else if (CheckBoxViewModelcs.DivideBy1000 == true)
+                {
+                    return _basicConversionService.KilometersPerHourToMetersPerSecond(KilometersInput) / 1000;
+                }
+                else if (CheckBoxViewModelcs.DivideBy10000 == true)
+                {
+                    return _basicConversionService.KilometersPerHourToMetersPerSecond(KilometersInput) / 10000;
+                }
+                return _basicConversionService.KilometersPerHourToMetersPerSecond(_kilometersInput);
+            }
+        }
+
+
+
+
+        //public double KilometersOutput => _basicConversionService.KilometersPerHourToMetersPerSecond(_kilometersInput);
     }
 }

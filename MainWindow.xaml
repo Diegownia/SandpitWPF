@@ -25,8 +25,9 @@
         </Grid.RowDefinitions>
         <ListBox x:Name="ListBoxExample" Grid.Column="4" ItemsSource="{Binding ListBoxItems, UpdateSourceTrigger=PropertyChanged}"/>
         <views:Conversions DataContext="{Binding ConversionsViewModel}" Grid.Column="0" Grid.Row="0" />
-        <views:BasicDataBindingView DataContext="{Binding BasicDataBindingViewModel}" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="2"/>
+        <views:BasicDataBindingView DataContext="{Binding BasicDataBindingViewModel}" Grid.Column="4" Grid.Row="1"/>
         <views:BasicConversionView DataContext="{Binding BasicConversionViewModel}" Grid.Column="4" Grid.Row="2"/>
+        <views:CheckBoxView DataContext="{Binding BasicConversionViewModel.CheckBoxViewModelcs}" Grid.Column="3" Grid.Row="2"/>
 
     </Grid>
 </Window>
