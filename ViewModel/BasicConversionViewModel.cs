@@ -72,28 +72,28 @@ namespace SandpitWPF.ViewModel
 
         }
 
-        public double MetersOutput 
+        public string MetersOutput 
         {
             get
             {
                 if (CheckBoxViewModelcs.DivideBy10 == true)
                 {
-                    return _basicConversionService.MeterstoFeet(_metersInput) / 10;
+                    return (_basicConversionService.MeterstoFeet(_metersInput) / 10).ToString("E04");
                 }
                 else if (CheckBoxViewModelcs.DivideBy100 == true)
                 {
-                    return _basicConversionService.MeterstoFeet(_metersInput) / 100;
+                    return (_basicConversionService.MeterstoFeet(_metersInput) / 100).ToString("E04");
                 }
                 else if (CheckBoxViewModelcs.DivideBy1000 == true)
                 {
-                    return _basicConversionService.MeterstoFeet(_metersInput) / 1000;
+                    return (_basicConversionService.MeterstoFeet(_metersInput) / 1000).ToString("E04");
                 }
                 else if (CheckBoxViewModelcs.DivideBy10000 == true)
                 {
-                    return _basicConversionService.MeterstoFeet(_metersInput) / 10000;
+                    return (_basicConversionService.MeterstoFeet(_metersInput) / 10000).ToString("E04");
                 }
 
-                return _basicConversionService.MeterstoFeet(_metersInput);
+                return _basicConversionService.MeterstoFeet(_metersInput).ToString("E04");
             }
         } 
         //public double KilogramsOutput => _basicConversionService.KilogramsToPounds(_kilogramsInput);
