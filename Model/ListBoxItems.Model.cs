@@ -13,10 +13,15 @@ namespace SandpitWPF.Model
         public ListBoxItems()
         {
 
-            _listBoxItems = new List<string> { "First", "Second", "Third" };
+            _listBoxItems = new List<string> { "Tea", "Coffee", "Milk" };
 
         }
         public IList<string> ListBoxItem => _listBoxItems;
+
+
+
+
+
 
 
 

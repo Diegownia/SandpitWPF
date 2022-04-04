@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace SandpitWPF.ViewModel
 {
-    class ListBoxViewModel
+    public class ListBoxViewModel : BaseViewModel
     {
+
     }
 }

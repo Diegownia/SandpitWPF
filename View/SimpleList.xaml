@@ -7,11 +7,7 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-        <ComboBox>
-            <ComboBoxItem>
-                
-            </ComboBoxItem>
-        </ComboBox>
-            
+        <ComboBox ItemsSource="{Binding ListBoxItem}" />
+
     </Grid>
 </UserControl>

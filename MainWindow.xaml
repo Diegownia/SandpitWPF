@@ -23,7 +23,7 @@
             <RowDefinition Height="1*"/>
             <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
-        <ListBox x:Name="ListBoxExample" Grid.Column="4" ItemsSource="{Binding ListBoxItems, UpdateSourceTrigger=PropertyChanged}"/>
+        <ListBox x:Name="ListBoxExample" Grid.Column="4" ItemsSource="{Binding ListBoxItems.Model, UpdateSourceTrigger=PropertyChanged}"/>
         <views:Conversions DataContext="{Binding ConversionsViewModel}" Grid.Column="0" Grid.Row="0" />
         <views:BasicDataBindingView DataContext="{Binding BasicDataBindingViewModel}" Grid.Column="4" Grid.Row="1"/>
         <views:BasicConversionView DataContext="{Binding BasicConversionViewModel}" Grid.Column="4" Grid.Row="2"/>

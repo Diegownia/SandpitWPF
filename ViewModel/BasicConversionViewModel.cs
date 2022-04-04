@@ -97,27 +97,27 @@ namespace SandpitWPF.ViewModel
             }
         } 
         //public double KilogramsOutput => _basicConversionService.KilogramsToPounds(_kilogramsInput);
-        public double KilogramsOutput
+        public string KilogramsOutput
         {
             get
             {
                 if (CheckBoxViewModelcs.DivideBy10 == true)
                 {
-                    return _basicConversionService.KilogramsToPounds(_kilogramsInput) / 10;
+                    return (_basicConversionService.KilogramsToPounds(_kilogramsInput) / 10).ToString("E04");
                 }
                 else if (CheckBoxViewModelcs.DivideBy100 == true)
                 {
-                    return _basicConversionService.KilogramsToPounds(_kilogramsInput) / 100;
+                    return (_basicConversionService.KilogramsToPounds(_kilogramsInput) / 100).ToString("E04");
                 }
                 else if (CheckBoxViewModelcs.DivideBy1000 == true)
                 {
-                    return _basicConversionService.KilogramsToPounds(_kilogramsInput) / 1000;
+                    return (_basicConversionService.KilogramsToPounds(_kilogramsInput) / 1000).ToString("E04");
                 }
                 else if (CheckBoxViewModelcs.DivideBy10000 == true)
                 {
-                    return _basicConversionService.KilogramsToPounds(_kilogramsInput) / 10000;
+                    return (_basicConversionService.KilogramsToPounds(_kilogramsInput) / 10000).ToString("E04");
                 }
-                return _basicConversionService.KilogramsToPounds(_kilogramsInput);
+                return _basicConversionService.KilogramsToPounds(_kilogramsInput).ToString("E04");
             }
         }
 
