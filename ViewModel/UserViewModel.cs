@@ -13,7 +13,21 @@ namespace SandpitWPF.ViewModel
         private string _name;
         private string _surname;
         private int _age;
-        private UserModel _user;
+        //private UserModel _user;
+        private List<UserModel> _users;
+
+
+        public UserViewModel()
+        {
+            List<UserModel> Users = new List<UserModel>();
+            Users.Add(new UserModel()
+            {
+                ID = 1,
+                Name = "Pawel",
+                Surname = "Korczak",
+                Age = 29
+            });
+        }
 
         public int ID 
         {
@@ -55,15 +69,25 @@ namespace SandpitWPF.ViewModel
             }
         }
 
-        public UserModel User
+        public List<UserModel> Users
         {
-            get { return _user; }
-            set 
-            { 
-                _user = value;
-                NotifyPropertyChanged(nameof(User));
+            get { return _users; }
+            set
+            {
+                _users = value;
+                NotifyPropertyChanged(nameof(Users));
             }
         }
+
+        //public UserModel User
+        //{
+        //    get { return _user; }
+        //    set 
+        //    { 
+        //        _user = value;
+        //        NotifyPropertyChanged(nameof(User));
+        //    }
+        //}
 
 
     }
