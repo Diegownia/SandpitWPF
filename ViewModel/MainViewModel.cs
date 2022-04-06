@@ -14,12 +14,14 @@ namespace SandpitWPF.ViewModel
         public ConversionsViewModel ConversionsViewModel { get; }
         public BasicDataBindingViewModel BasicDataBindingViewModel { get; }
         public BasicConversionViewModel BasicConversionViewModel { get; }
+        public UserViewModel UserViewModel { get; }
 
         public MainViewModel()
         {
             ConversionsViewModel = new ConversionsViewModel();
             BasicDataBindingViewModel = new BasicDataBindingViewModel();
             BasicConversionViewModel = new BasicConversionViewModel();
+            UserViewModel = new UserViewModel();
 
         }
 

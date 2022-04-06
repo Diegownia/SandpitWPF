@@ -13,6 +13,13 @@ namespace SandpitWPF.Model
         public string Surname { get; set; }
         public int Age { get; set; }
 
+        //public UserModel(int ID, string Name, string Surname, int Age)
+        //{
+        //    this.ID = ID;
+        //    this.Name = Name;
+        //    this.Surname = Surname;
+        //    this.Age = Age;
+        //} Leaving this here as it's the other way of making stuff
 
 
     }
