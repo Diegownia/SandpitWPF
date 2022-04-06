@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,13 +15,13 @@ namespace SandpitWPF.ViewModel
         //private string _surname;
         //private int _age;
         //private UserModel _user;
-        private List<UserModel> _users;
+        private ObservableCollection<UserModel> _users;
 
 
         public UserViewModel()
         {
             //List<UserModel> _users = new List<UserModel>(); ///Why doesn't it work!!!! 
-            _users = new List<UserModel>();
+            _users = new ObservableCollection<UserModel>(); //was this that simple???????? Just change List into ObservableCollection?
             _users.Add(new UserModel()
             {
                 ID = 1,
@@ -79,7 +80,7 @@ namespace SandpitWPF.ViewModel
         //    }
         //}
 
-        public List<UserModel> Users
+        public ObservableCollection<UserModel> Users
         {
             get { return _users; }
             set
