@@ -24,6 +24,7 @@ namespace SandpitWPF.ViewModel
             BasicDataBindingViewModel = new BasicDataBindingViewModel();
             BasicConversionViewModel = new BasicConversionViewModel();
             UserViewModel = new UserViewModel();
+            _navigationService = new NavigationService();
 
         }
 
