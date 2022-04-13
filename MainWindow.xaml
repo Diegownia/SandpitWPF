@@ -28,7 +28,7 @@
         <views:BasicDataBindingView DataContext="{Binding BasicDataBindingViewModel}" Grid.Column="4" Grid.Row="1"/>
         <views:BasicConversionView DataContext="{Binding BasicConversionViewModel}" Grid.Column="4" Grid.Row="2"/>
         <views:CheckBoxView DataContext="{Binding BasicConversionViewModel.CheckBoxViewModelcs}" Grid.Column="3" Grid.Row="2"/>
-        <views:ButtonUserAddView DataContext="{Binding}" Grid.Column="1" Grid.Row="1"/>
+        <views:ButtonUserAddView Grid.Column="1" Grid.Row="1"/>
 
     </Grid>
 </Window>

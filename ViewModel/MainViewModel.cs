@@ -1,4 +1,5 @@
 ﻿using SandpitWPF.Model;
+using SandpitWPF.Services;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,6 +16,7 @@ namespace SandpitWPF.ViewModel
         public BasicDataBindingViewModel BasicDataBindingViewModel { get; }
         public BasicConversionViewModel BasicConversionViewModel { get; }
         public UserViewModel UserViewModel { get; }
+        private NavigationService _navigationService { get; set; }
 
         public MainViewModel()
         {
