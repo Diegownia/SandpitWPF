@@ -7,7 +7,7 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-        <Button Content="Add User" ClickMode="Press" 
+        <Button Content="Add User" ClickMode="Press" Click="Button_Click" 
                 >
 
         </Button>

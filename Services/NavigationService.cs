@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SandpitWPF.View;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,5 +9,12 @@ namespace SandpitWPF.Services
 {
     public class NavigationService
     {
+
+
+
+        public void OpenWindow()
+        {
+            UserAddView.Show();
+        }
     }
 }
