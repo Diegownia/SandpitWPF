@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SandpitWPF.ViewModel
 {
-    public class ConversionsViewModel : BaseViewModel
+    public class ConversionsViewModel : BaseViewModel, IConversionsViewModel
     {
         public IList<string> Index { get; }
         private string _selectedItem;

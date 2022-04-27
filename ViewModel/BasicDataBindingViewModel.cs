@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SandpitWPF.ViewModel
 {
-    public class BasicDataBindingViewModel : BaseViewModel
+    public class BasicDataBindingViewModel : BaseViewModel, IBasicDataBindingViewModel
     {
         private readonly BasicDataBindingService _basicDataBindingService;
         private double _input;

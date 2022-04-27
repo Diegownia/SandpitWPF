@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 
 namespace SandpitWPF.ViewModel
 {
-    public class BasicConversionViewModel : BaseViewModel
+    public class BasicConversionViewModel : BaseViewModel, IBasicConversionViewModel
     {
         private readonly BasicConversionService _basicConversionService;
-        public  CheckBoxViewModelcs CheckBoxViewModelcs { get; }
+        public CheckBoxViewModelcs CheckBoxViewModelcs { get; }
 
         private double _metersInput;
         private double _kilogramsInput;
@@ -46,7 +46,7 @@ namespace SandpitWPF.ViewModel
                 NotifyPropertyChanged(nameof(MetersOutput));
 
             }
-        }   
+        }
 
         public double KilogramsInput
         {
@@ -72,7 +72,7 @@ namespace SandpitWPF.ViewModel
 
         }
 
-        public string MetersOutput 
+        public string MetersOutput
         {
             get
             {
@@ -95,7 +95,7 @@ namespace SandpitWPF.ViewModel
 
                 return _basicConversionService.MeterstoFeet(_metersInput).ToString("E04");
             }
-        } 
+        }
         //public double KilogramsOutput => _basicConversionService.KilogramsToPounds(_kilogramsInput);
         public string KilogramsOutput
         {

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SandpitWPF.ViewModel
 {
-    public class CheckBoxViewModelcs : BaseViewModel
+    public class CheckBoxViewModelcs : BaseViewModel, ICheckBoxViewModelcs
     {
         private bool _divideBy10;// = false;
         private bool _divideBy100;// = false;
