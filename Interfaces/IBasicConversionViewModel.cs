@@ -4,7 +4,7 @@ namespace SandpitWPF.Interfaces
 {
     public interface IBasicConversionViewModel
     {
-        CheckBoxViewModelcs CheckBoxViewModelcs { get; }
+        ICheckBoxViewModelcs CheckBoxViewModelcs { get; }
         double KilogramsInput { get; set; }
         string KilogramsOutput { get; }
         double KilometersInput { get; set; }

@@ -10,12 +10,12 @@ namespace SandpitWPF.ViewModel
 {
     public class BasicDataBindingViewModel : BaseViewModel, IBasicDataBindingViewModel
     {
-        private readonly BasicDataBindingService _basicDataBindingService;
+        private readonly IBasicDataBindingService _basicDataBindingService;
         private double _input;
 
-        public BasicDataBindingViewModel()
+        public BasicDataBindingViewModel(IBasicDataBindingService basicDataBindingService)
         {
-            _basicDataBindingService = new BasicDataBindingService();
+            _basicDataBindingService = basicDataBindingService;
         }
 
 

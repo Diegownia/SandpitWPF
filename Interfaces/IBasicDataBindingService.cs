@@ -1,6 +1,6 @@
 ﻿namespace SandpitWPF.Services
 {
-    interface IBasicDataBindingService
+    public interface IBasicDataBindingService
     {
         double Divide(double input);
     }

@@ -1,6 +1,8 @@
-﻿namespace SandpitWPF.Interfaces
+﻿using System.ComponentModel;
+
+namespace SandpitWPF.Interfaces
 {
-    public interface ICheckBoxViewModelcs
+    public interface ICheckBoxViewModelcs : INotifyPropertyChanged
     {
         bool DivideBy10 { get; set; }
         bool DivideBy100 { get; set; }

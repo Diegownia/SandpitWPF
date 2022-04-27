@@ -10,18 +10,18 @@ namespace SandpitWPF.ViewModel
 {
     public class BasicConversionViewModel : BaseViewModel, IBasicConversionViewModel
     {
-        private readonly BasicConversionService _basicConversionService;
-        public CheckBoxViewModelcs CheckBoxViewModelcs { get; }
+        private readonly IBasicConversionService _basicConversionService;
+        public ICheckBoxViewModelcs CheckBoxViewModelcs { get; }
 
         private double _metersInput;
         private double _kilogramsInput;
         private double _kilometersInput;
 
-        public BasicConversionViewModel()
+        public BasicConversionViewModel(IBasicConversionService basicConversionService, ICheckBoxViewModelcs checkBoxViewModelcs)
         {
-            _basicConversionService = new BasicConversionService();
-            CheckBoxViewModelcs = new CheckBoxViewModelcs();
-            CheckBoxViewModelcs.PropertyChanged += CheckBoxViewModelcs_PropertyChanged;
+            _basicConversionService = basicConversionService;
+            CheckBoxViewModelcs = checkBoxViewModelcs;
+            checkBoxViewModelcs.PropertyChanged += CheckBoxViewModelcs_PropertyChanged;
         }
 
         private void CheckBoxViewModelcs_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
@@ -146,9 +146,6 @@ namespace SandpitWPF.ViewModel
                 return _basicConversionService.KilometersPerHourToMetersPerSecond(_kilometersInput);
             }
         }
-
-
-
 
         //public double KilometersOutput => _basicConversionService.KilometersPerHourToMetersPerSecond(_kilometersInput);
     }
