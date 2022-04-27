@@ -40,6 +40,11 @@ namespace SandpitWPF.ViewModel
             }
         }
 
+        public void Load()
+        {
+            ConversionsViewModel.Load();
+        }
+
         //ListBoxExample.ItemSource = listBoxItems;
     }
 }

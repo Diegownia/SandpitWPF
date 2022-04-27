@@ -49,6 +49,7 @@ namespace SandpitWPF
             builder.RegisterType<UserViewModel>().As<IUserViewModel>();
             builder.RegisterType<BasicConversionService>().As<IBasicConversionService>();
             builder.RegisterType<BasicDataBindingService>().As<IBasicDataBindingService>();
+            builder.RegisterType<ConversionsDataService>().As<IConversionsDataService>();
             //builder.RegisterType<>().As<>();
             builder.RegisterType<MainViewModel>();
             _container = builder.Build();

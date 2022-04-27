@@ -6,5 +6,6 @@ namespace SandpitWPF.Interfaces
     {
         IList<string> Index { get; }
         string SelectedItem { get; set; }
+        void Load();
     }
 }
