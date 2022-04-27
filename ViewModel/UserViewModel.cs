@@ -4,11 +4,12 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using SandpitWPF.Interfaces;
 using SandpitWPF.Model;
 
 namespace SandpitWPF.ViewModel
 {
-    public class UserViewModel : BaseViewModel
+    public class UserViewModel : BaseViewModel, IUserViewModel
     {
         //private int _id;
         //private string _name;

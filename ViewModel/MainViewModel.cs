@@ -1,4 +1,5 @@
-﻿using SandpitWPF.Model;
+﻿using SandpitWPF.Interfaces;
+using SandpitWPF.Model;
 using SandpitWPF.Services;
 using System;
 using System.Collections.Generic;
@@ -12,19 +13,20 @@ namespace SandpitWPF.ViewModel
     public class MainViewModel : BaseViewModel
     {
         private IList<string> _listBoxItems;
-        public ConversionsViewModel ConversionsViewModel { get; }
-        public BasicDataBindingViewModel BasicDataBindingViewModel { get; }
-        public BasicConversionViewModel BasicConversionViewModel { get; }
-        public UserViewModel UserViewModel { get; }
-        private NavigationService _navigationService { get; set; }
+        public IConversionsViewModel ConversionsViewModel { get; }
+        public IBasicDataBindingViewModel BasicDataBindingViewModel { get; }
+        public IBasicConversionViewModel BasicConversionViewModel { get; }
+        public IUserViewModel UserViewModel { get; }
+        //private INavigationService _navigationService { get; set; }
 
-        public MainViewModel()
+        public MainViewModel(IConversionsViewModel conversionsViewModel, IBasicDataBindingViewModel basicDataBindingViewModel,
+            IBasicConversionViewModel basicConversionViewModel, IUserViewModel userViewModel)
         {
-            ConversionsViewModel = new ConversionsViewModel();
-            BasicDataBindingViewModel = new BasicDataBindingViewModel();
-            BasicConversionViewModel = new BasicConversionViewModel();
-            UserViewModel = new UserViewModel();
-            _navigationService = new NavigationService();
+            ConversionsViewModel = conversionsViewModel;
+            BasicDataBindingViewModel =  basicDataBindingViewModel;
+            BasicConversionViewModel =  basicConversionViewModel;
+            UserViewModel =  userViewModel;
+            //_navigationService = new NavigationService();
 
         }
 

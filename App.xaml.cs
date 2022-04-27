@@ -46,6 +46,7 @@ namespace SandpitWPF
             builder.RegisterType<BasicConversionViewModel>().As<IBasicConversionViewModel>();
             builder.RegisterType<BasicDataBindingViewModel>().As<IBasicDataBindingViewModel>();
             builder.RegisterType<CheckBoxViewModelcs>().As<ICheckBoxViewModelcs>();
+            builder.RegisterType<UserViewModel>().As<IUserViewModel>();
             builder.RegisterType<BasicConversionService>().As<IBasicConversionService>();
             builder.RegisterType<BasicDataBindingService>().As<IBasicDataBindingService>();
             //builder.RegisterType<>().As<>();
