@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace SandpitWPF.Services
 {
-    public class BasicConversionService
+    public class BasicConversionService : IBasicConversionService
     {
         public double MeterstoFeet(double meters)
         {
-            return meters / 3.2808399;      
+            return meters / 3.2808399;
         }
 
 

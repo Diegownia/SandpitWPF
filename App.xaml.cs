@@ -10,6 +10,7 @@ using SandpitWPF.ViewModel;
 using Autofac;
 using IContainer = Autofac.IContainer;
 using SandpitWPF.Interfaces;
+using SandpitWPF.Services;
 
 namespace SandpitWPF
 {
@@ -18,22 +19,39 @@ namespace SandpitWPF
     /// </summary>
     public partial class App : Application
     {
-        private static IContainer Container { get; set; }
+        private static IContainer _container { get; set; }
 
-
-
-        private void Init()
+        private void Application_Startup(object sender, StartupEventArgs e)
         {
-            var builder = new ContainerBuilder();
-            builder.RegisterType<IConversionsViewModel>().As<ConversionsViewModel>();
+            Init();
+            using (var scope = _container.BeginLifetimeScope())
+            {
+                Current.MainWindow = new MainWindow
+                {
+                    DataContext = scope.Resolve<MainViewModel>()
+                };
+                Current.MainWindow.Show();
+            }
 
+            //Before Dependency injection
+            //Current.MainWindow = new MainWindow { DataContext = new MainViewModel() };
+            //Current.MainWindow.Show();
         }
 
-        private static void Application_Startup(object sender, StartupEventArgs e)
+        private static void Init()
         {
+            var builder = new ContainerBuilder();
+            //Class First Interface second! 
+            builder.RegisterType<ConversionsViewModel>().As<IConversionsViewModel>();
+            builder.RegisterType<BasicConversionViewModel>().As<IBasicConversionViewModel>();
+            builder.RegisterType<BasicDataBindingViewModel>().As<IBasicDataBindingViewModel>();
+            builder.RegisterType<CheckBoxViewModelcs>().As<ICheckBoxViewModelcs>();
+            builder.RegisterType<BasicConversionService>().As<IBasicConversionService>();
+            builder.RegisterType<BasicDataBindingService>().As<IBasicDataBindingService>();
+            //builder.RegisterType<>().As<>();
+            builder.RegisterType<MainViewModel>();
+            _container = builder.Build();
 
-            Current.MainWindow = new MainWindow { DataContext = new MainViewModel() };
-            Current.MainWindow.Show();
         }
     }
 }

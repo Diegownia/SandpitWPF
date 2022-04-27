@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace SandpitWPF.Services
 {
-    class BasicDataBindingService
+    class BasicDataBindingService : IBasicDataBindingService
     {
         public double Divide(double input)
         {
             return input / 100;
-            
+
         }
     }
 }
