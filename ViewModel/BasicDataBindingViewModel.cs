@@ -1,4 +1,5 @@
-﻿using SandpitWPF.Services;
+﻿using SandpitWPF.Interfaces;
+using SandpitWPF.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;

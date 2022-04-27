@@ -9,6 +9,7 @@ using System.Windows;
 using SandpitWPF.ViewModel;
 using Autofac;
 using IContainer = Autofac.IContainer;
+using SandpitWPF.Interfaces;
 
 namespace SandpitWPF
 {
@@ -24,7 +25,7 @@ namespace SandpitWPF
         private void Init()
         {
             var builder = new ContainerBuilder();
-            builder.RegisterType<>().As<>();
+            builder.RegisterType<IConversionsViewModel>().As<ConversionsViewModel>();
 
         }
 
