@@ -1,4 +1,6 @@
-﻿namespace SandpitWPF.ViewModel
+﻿using SandpitWPF.ViewModel;
+
+namespace SandpitWPF.Interfaces
 {
     public interface IBasicConversionViewModel
     {

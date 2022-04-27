@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace SandpitWPF.ViewModel
+namespace SandpitWPF.Interfaces
 {
     public interface IConversionsViewModel
     {

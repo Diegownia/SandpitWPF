@@ -1,4 +1,4 @@
-﻿namespace SandpitWPF.ViewModel
+﻿namespace SandpitWPF.Interfaces
 {
     public interface ICheckBoxViewModelcs
     {

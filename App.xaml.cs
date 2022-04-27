@@ -24,6 +24,7 @@ namespace SandpitWPF
         private void Init()
         {
             var builder = new ContainerBuilder();
+            builder.RegisterType<>().As<>();
 
         }
 
