@@ -16,16 +16,23 @@ namespace SandpitWPF.ViewModel
         public IConversionsViewModel ConversionsViewModel { get; }
         public IBasicDataBindingViewModel BasicDataBindingViewModel { get; }
         public IBasicConversionViewModel BasicConversionViewModel { get; }
-        public IUserViewModel UserViewModel { get; }
+        public IUserDialogViewModel UserViewModel { get; }
+        public INavigationService NavigationService { get; set; }
+        public IDialogService DialogService { get; set; }
+        private bool? _userAddDialogVisible = false;
+        
         //private INavigationService _navigationService { get; set; }
 
+
         public MainViewModel(IConversionsViewModel conversionsViewModel, IBasicDataBindingViewModel basicDataBindingViewModel,
-            IBasicConversionViewModel basicConversionViewModel, IUserViewModel userViewModel)
+            IBasicConversionViewModel basicConversionViewModel, IUserDialogViewModel userViewModel, INavigationService navigationService, IDialogService dialogService)
         {
+            NavigationService = navigationService;
             ConversionsViewModel = conversionsViewModel;
             BasicDataBindingViewModel =  basicDataBindingViewModel;
             BasicConversionViewModel =  basicConversionViewModel;
             UserViewModel =  userViewModel;
+            DialogService = dialogService;
             //_navigationService = new NavigationService();
 
         }
@@ -43,6 +50,32 @@ namespace SandpitWPF.ViewModel
         public void Load()
         {
             ConversionsViewModel.Load();
+        }
+        public void OpenWindow()
+        {
+            NavigationService.OpenWindow();
+        }
+
+        public bool? UserAddDialogVisible
+        {
+            get { return _userAddDialogVisible; }
+            set
+            {
+                _userAddDialogVisible = value;
+                NotifyPropertyChanged(nameof(UserAddDialogVisible));
+            }
+        }
+
+
+
+        public void OnAddUsersClick()
+        {
+            _userAddDialogVisible = DialogService.ShowDialog(UserViewModel);
+            if (_userAddDialogVisible != true)
+            {
+                return;
+            }
+            //todo adda data Service to save;
         }
 
         //ListBoxExample.ItemSource = listBoxItems;

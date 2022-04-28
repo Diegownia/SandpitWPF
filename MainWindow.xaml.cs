@@ -1,4 +1,5 @@
-﻿using SandpitWPF.ViewModel;
+﻿using SandpitWPF.View;
+using SandpitWPF.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -31,6 +32,20 @@ namespace SandpitWPF
             if (DataContext is MainViewModel vm)
             {
                 vm?.Load();
+            }
+        }
+
+        private void MenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            var aboutDialog = new AbaoutDialog();
+            aboutDialog.Show();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            if (DataContext is MainViewModel vm)
+            {
+                vm?.OnAddUsersClick();
             }
         }
     }

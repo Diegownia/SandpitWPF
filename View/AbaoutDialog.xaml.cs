@@ -10,24 +10,18 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace SandpitWPF.View
 {
     /// <summary>
-    /// Interaction logic for ButtonUserAddView.xaml
+    /// Interaction logic for AbaoutDialog.xaml
     /// </summary>
-    public partial class ButtonUserAddView : UserControl
+    public partial class AbaoutDialog : Window
     {
-        public ButtonUserAddView()
+        public AbaoutDialog()
         {
             InitializeComponent();
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            NavigationService.OpenWindow();
         }
     }
 }

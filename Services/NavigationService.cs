@@ -1,4 +1,5 @@
 ﻿using SandpitWPF.View;
+using SandpitWPF.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,14 +8,11 @@ using System.Threading.Tasks;
 
 namespace SandpitWPF.Services
 {
-    public class NavigationService
+    public class NavigationService : INavigationService
     {
-
-
-
-        public void OpenWindow()
+        public bool OpenWindow()
         {
-            UserAddView.Show();
+            return true;
         }
     }
 }

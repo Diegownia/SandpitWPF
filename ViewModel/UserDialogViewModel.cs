@@ -9,36 +9,27 @@ using SandpitWPF.Model;
 
 namespace SandpitWPF.ViewModel
 {
-    public class UserViewModel : BaseViewModel, IUserViewModel
+    public class UserDialogViewModel : BaseViewModel, IUserDialogViewModel
     {
         //private int _id;
         //private string _name;
         //private string _surname;
         //private int _age;
         //private UserModel _user;
-        private ObservableCollection<UserModel> _users;
-
-
-        public UserViewModel()
+        //private ObservableCollection<UserModel> _users;
+        private UserModel _userModel;
+        public UserModel UserModel
         {
-            //List<UserModel> _users = new List<UserModel>(); ///Why doesn't it work!!!! 
-            _users = new ObservableCollection<UserModel>(); //was this that simple???????? Just change List into ObservableCollection?
-            _users.Add(new UserModel()
+            get => _userModel;
+            set
             {
-                ID = 1,
-                Name = "Pawel",
-                Surname = "Korczak",
-                Age = 29
-            });
-
-            _users.Add(new UserModel()
-            {
-                ID = 2,
-                Name = "John",
-                Surname = "Doe",
-                Age = 20
-            });
-
+                _userModel = value;
+                NotifyPropertyChanged(nameof(UserModel));
+            }
+        }
+        public UserDialogViewModel()
+        {
+            UserModel = new UserModel();
         }
 
         //public int ID 
@@ -81,15 +72,15 @@ namespace SandpitWPF.ViewModel
         //    }
         //}
 
-        public ObservableCollection<UserModel> Users
-        {
-            get { return _users; }
-            set
-            {
-                _users = value;
-                NotifyPropertyChanged(nameof(Users));
-            }
-        }
+        //public ObservableCollection<UserModel> Users
+        //{
+        //    get { return _users; }
+        //    set
+        //    {
+        //        _users = value;
+        //        NotifyPropertyChanged(nameof(Users));
+        //    }
+        //}
 
         //public UserModel User
         //{
