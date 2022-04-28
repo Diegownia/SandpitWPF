@@ -48,5 +48,13 @@ namespace SandpitWPF
                 vm?.OnAddUsersClick();
             }
         }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            if (DataContext is MainViewModel vm)
+            {
+                vm?.OnDisplayMoreButtons();
+            }
+        }
     }
 }

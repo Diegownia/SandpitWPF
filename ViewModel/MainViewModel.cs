@@ -20,6 +20,7 @@ namespace SandpitWPF.ViewModel
         public INavigationService NavigationService { get; set; }
         public IDialogService DialogService { get; set; }
         private bool? _userAddDialogVisible = false;
+        private bool? _moreUserButtonsVisible = false;
         
         //private INavigationService _navigationService { get; set; }
 
@@ -76,6 +77,23 @@ namespace SandpitWPF.ViewModel
                 return;
             }
             //todo adda data Service to save;
+        }
+
+        public bool? MoreUserButtonsVisible
+        {
+            get { return _moreUserButtonsVisible; }
+            set
+            {
+                _moreUserButtonsVisible = value;
+                NotifyPropertyChanged(nameof(MoreUserButtonsVisible));
+            }
+        }
+
+
+        public void OnDisplayMoreButtons()
+        {
+            _moreUserButtonsVisible = DialogService2.ShowDialog()
+                //Finish At home?
         }
 
         //ListBoxExample.ItemSource = listBoxItems;
