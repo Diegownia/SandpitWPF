@@ -19,6 +19,7 @@ namespace SandpitWPF.Services
             _views = new Dictionary<string, Window>();
             _views.Add("User", new UserAddView());
             //_views.Add("About", new AbaoutDialog());
+            _views.Add("2", new Dialog2View());
         }
 
         private string GetKey(object viewModel)

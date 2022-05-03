@@ -92,7 +92,7 @@ namespace SandpitWPF.ViewModel
 
         public void OnDisplayMoreButtons()
         {
-            _moreUserButtonsVisible = DialogService2.ShowDialog()
+            _moreUserButtonsVisible = DialogService2.ShowDialog();
                 //Finish At home?
         }
 
